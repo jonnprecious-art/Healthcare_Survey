@@ -193,3 +193,10 @@ for _ in range(20):
 
     response = requests.post(url, data=data)
     print(response.text)  # Should print "Data submitted successfully!"
+import os
+
+application = app  # VERY IMPORTANT for AWS
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
